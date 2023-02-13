@@ -1,14 +1,18 @@
+/* VIDEO TIME: 13'  */
+
 const hello = "world";
+// hello = "foo"; // X Incorrect: hello is a constant
 
-// hello = "bonjour"; // X Incorrect: hello is a constant
+/* implicit variable inference 
+---------------------------------*/
 
-// implicit variable inference
 let greetings = "bonjour";
 greetings = "foo"; // Correct, let give something changeable
-greetings = " true"; // Correct
-greetings = true; // X Incorrect
+greetings = "true"; // Correct
+// greetings = true; // X Incorrect
 
-// explicit variable inference
+/* explicit variable inference 
+-----------------------------------*/
 
 let greetings2: string = "Hello again";
 //greetings2 = [] // X Incorrect
