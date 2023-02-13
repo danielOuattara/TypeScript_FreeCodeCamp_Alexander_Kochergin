@@ -1,4 +1,4 @@
-//Write a better global code, make you organize ervery in advance
+// Write a better global code, make you organize ervery in advance
 
 class Person {
   firstName: string;
@@ -9,13 +9,12 @@ class Person {
     this.lastName = lName;
   }
   getFulName(): string {
-    return `this.firstName this.lastName`;
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
 const person = new Person("Daniel", "Ouattara");
-person.getFulName();
-
+console.log(person.getFulName());
 
 const a = "1";
-console.log(a.foo())  // X Incorrect
+// console.log(a.foo())  // X Incorrect
