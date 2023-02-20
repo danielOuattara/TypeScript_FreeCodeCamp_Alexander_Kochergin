@@ -65,7 +65,7 @@ const user2_C: User2 = {
 
 console.log(user1_C.age);
 
-// -----------------------------------------------------
+// --------------------------------------------
 // Function in interfaces
 
 interface User3 {
@@ -92,16 +92,17 @@ const user2_D: User3 = {
 
 console.log(user2_D.getMessage());
 
-// -----------------------------------------------------
-// Bonus: 1 interface naming convention
+//------
 
-interface UserInterface {
+interface User4 {
   name: string;
   age?: number;
-  getMessage(): string;
+  getMessage?(): string;
 }
 
-const user1_E: UserInterface = {
+//---
+
+const user1_new: User4 = {
   name: "John",
   age: 30,
   getMessage() {
@@ -109,12 +110,33 @@ const user1_E: UserInterface = {
   },
 };
 
-const user2_E: UserInterface = {
-  // age is no more missing, it is optional
-  name: "John",
-  getMessage() {
-    return `Hello +${this.name}`;
-  },
-};
+console.log("user1_new.age= ", user1_new.age);
+console.log("user1_new.name= ", user1_new.name);
+console.log("user1_new.getMessage()= ", user1_new.getMessage!());
 
-console.log(user2_D.getMessage());
+//---
+
+// -----------------------------------------------------
+// Bonus: 1 interface naming convention
+
+interface IUser {
+  name: string;
+  age?: number;
+  getMessage(): string;
+}
+
+//---
+
+interface UserInterface {
+  name: string;
+  age?: number;
+  getMessage(): string;
+}
+
+//---
+
+interface UserI {
+  name: string;
+  age?: number;
+  getMessage(): string;
+}

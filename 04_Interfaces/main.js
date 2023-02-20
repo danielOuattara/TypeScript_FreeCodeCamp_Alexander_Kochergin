@@ -1,3 +1,4 @@
+"use strict";
 var user1 = {
     name: "John",
     age: 30
@@ -47,18 +48,14 @@ var user2_D = {
     }
 };
 console.log(user2_D.getMessage());
-var user1_E = {
+//---
+var user1_new = {
     name: "John",
     age: 30,
     getMessage: function () {
         return "Hello +".concat(this.name);
     }
 };
-var user2_E = {
-    // age is no more missing, it is optional
-    name: "John",
-    getMessage: function () {
-        return "Hello +".concat(this.name);
-    }
-};
-console.log(user2_D.getMessage());
+console.log("user1_new.age= ", user1_new.age);
+console.log("user1_new.name= ", user1_new.name);
+console.log("user1_new.getMessage()= ", user1_new.getMessage());
