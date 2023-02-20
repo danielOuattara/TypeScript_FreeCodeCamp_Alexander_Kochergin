@@ -1,4 +1,4 @@
-// Write a better global code, make you organize ervery in advance
+// Write a better global code, make you organized every in advance
 
 class Person {
   firstName: string;
