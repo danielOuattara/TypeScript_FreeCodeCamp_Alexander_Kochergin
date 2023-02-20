@@ -1,14 +1,14 @@
-//---------------------------------------------
+//--------------------------------------------
 // Void
 
-// Accepatble syntax
-const doSometing = () => {
-  console.log("Do someting");
+// Acceptable syntax
+const doSomething = () => {
+  console.log("Do something");
 };
 
-// Recommanded syntax, be specific
-const doSometing2 = (): void => {
-  console.log("Do someting");
+// Recommended syntax, be specific
+const doSomething2 = (): void => {
+  console.log("Do something");
 };
 
 let foo: void = undefined;
@@ -23,8 +23,8 @@ foo2.bar(); // ???, Not good
 //-----------------------------------------------
 // Never
 
-const doSometing3 = (): never => {
-  console.log("Do someting");
+const doSomething3 = (): never => {
+  console.log("Do something");
   throw "Never";
 };
 
@@ -35,8 +35,12 @@ const doSometing3 = (): never => {
 let variableAny: any = 10;
 let variableUnknown: unknown = 10;
 
-let string_1: string = variableAny;
-let string_2: string = variableUnknown; // X Incorrect
+let var_1: string = variableAny;
+
+var_1 = "Hello";
+
+let var_2: string = variableUnknown; // X Incorrect
+var_2 = "Hello";
 
 console.log(variableAny.foo()); // acceptable, even if no meaning
 console.log(variableUnknown.foo()); // X Incorrect
@@ -48,11 +52,11 @@ console.log(variableUnknown.foo()); // X Incorrect
 let variableAny2: any = 10;
 let variableUnknown2: unknown = 10;
 
-let string_12: string = variableAny;
-let string_22: string = variableUnknown as string; // as => assertion/converting operator
+let var_11: string = variableAny;
+var_11 = "hello";
 
-console.log(variableAny.foo()); // acceptable, even if no meaning
-console.log(variableUnknown.foo()); // X Incorrect
+let var_22: string = variableUnknown as string; // as => assertion/converting operator
+var_22 = "Hello again";
 
 let pageNumber: string = "1";
 

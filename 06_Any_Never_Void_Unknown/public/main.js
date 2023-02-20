@@ -1,41 +1,43 @@
 "use strict";
-//---------------------------------------------
+//--------------------------------------------
 // Void
-// Accepatble syntax
-const doSometing = () => {
-    console.log("Do someting");
+// Acceptable syntax
+var doSomething = function () {
+    console.log("Do something");
 };
-// Recommanded syntax, be specific
-const doSometing2 = () => {
-    console.log("Do someting");
+// Recommended syntax, be specific
+var doSomething2 = function () {
+    console.log("Do something");
 };
-let foo = undefined;
+var foo = undefined;
 // ---------------------------------------------
 // Any - Avoid at any cost ! Please !
-let foo2 = true;
+var foo2 = true;
 foo2 = "OK";
 foo2.bar(); // ???, Not good
 //-----------------------------------------------
 // Never
-const doSometing3 = () => {
-    console.log("Do someting");
+var doSomething3 = function () {
+    console.log("Do something");
     throw "Never";
 };
 //------------------------------------------------
 // Unknown
-let variableAny = 10;
-let variableUnknown = 10;
-let string_1 = variableAny;
-let string_2 = variableUnknown; // X Incorrect
+var variableAny = 10;
+var variableUnknown = 10;
+var var_1 = variableAny;
+var_1 = "Hello";
+var var_2 = variableUnknown; // X Incorrect
+var_2 = "Hello";
 console.log(variableAny.foo()); // acceptable, even if no meaning
 console.log(variableUnknown.foo()); // X Incorrect
 //-------------------------------------------------
 // Type Assertion: converting one type to another
-let variableAny2 = 10;
-let variableUnknown2 = 10;
-let string_12 = variableAny;
-let string_22 = variableUnknown; // as => assertion/converting operator
-console.log(variableAny.foo()); // acceptable, even if no meaning
-console.log(variableUnknown.foo()); // X Incorrect
-let pageNumber = "1";
-let numericPageNumber = pageNumber;
+var variableAny2 = 10;
+var variableUnknown2 = 10;
+var var_11 = variableAny;
+var_11 = "hello";
+var var_22 = variableUnknown; // as => assertion/converting operator
+var_22 = "Hello again";
+var pageNumber = "1";
+var numericPageNumber = pageNumber;
