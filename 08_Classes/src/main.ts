@@ -23,105 +23,36 @@ console.log(user_1.firstName);
 
 //------------------------------------------------------------
 
-// public, private, protected, static
+// public, private, protected, static, abstract, ...
 
 class User2 {
-  private firstName: string;
+  firstName: string;
   private lastName: string;
   protected birthDate: string;
   readonly nationality: string;
-
-  constructor(
-    fName: string,
-    lName: string,
-    b_Date: string,
-    nationality: string
-  ) {
-    this.firstName = fName;
-    this.lastName = lName;
-    this.birthDate = b_Date;
-    this.nationality = nationality;
-  }
-
-  static getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
-
-const user_2 = new User2("John", "Doe", "01 Jan 1900", "chinese");
-
-console.log(user_2.getFullName()); // X Incorrect,static method call
-console.log(user_2.firstName); // X Incorrect , private atttribte
-
-//------------------------------------------------------------
-
-// InterFaces + Classes
-
-interface userInterface {
-  getFullName(): string;
-}
-
-class User3 implements userInterface {
-  private firstName: string;
-  lastName: string;
-  protected birthDate: string;
-  readonly nationality: string;
-  static readonly minWife: number = 1;
-
-  constructor(
-    fName: string,
-    lName: string,
-    b_Date: string,
-    nationality: string
-  ) {
-    this.firstName = fName;
-    this.lastName = lName;
-    this.birthDate = b_Date;
-    this.nationality = nationality;
-  }
-
-  static getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
-
-const user_3 = new User3("John", "Doe", "01 Jan 1900", "chinese");
-
-console.log(user_3.getFullName()); // X Incorrect,static method call
-console.log(user_3.firstName); // X Incorrect , private atttribute
-console.log(User3.getFullName()); // Correct
-
-//--------------------------------------------------------------
-
-// Inheritance in TypeScript
-
-class Admin extends User3 {
-  private editor: string;
 
   constructor(
     firstName: string,
     lastName: string,
     birthDate: string,
     nationality: string,
-    my_editor: string
   ) {
-    super(firstName, lastName, birthDate, nationality);
-    this.editor = my_editor;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthDate = birthDate;
+    this.nationality = nationality;
   }
 
-  setEditor(editor: string): void {
-    this.editor = editor;
+  getFullName(): string {
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
-const admin = new Admin(
-  "John",
-  "Doe",
-  "01 Jan 1900",
-  "chinese",
-  "Jouranl of Code"
-);
-console.log(admin);
+const user_2 = new User2("John", "Doe", "01 Jan 1900", "chinese");
 
-console.log(admin.nationality); // Accessible
-console.log(admin.lastName); // Accessible
+console.log(user_2.getFullName());
+console.log(user_2.firstName); // X Incorrect , private attribute
+// console.log(user_2.birthDate); // X Incorrect , private attribute
+// console.log(user_2.birthDate); // X Incorrect , protected attribute
+
+//------------------------------------------------------------
