@@ -8,12 +8,12 @@ let pageNumber: string | number = "23";
 
 let errorMessage: string | null = null; // initially
 
-interface userInterface {
+interface UserInterface {
   firstName: string;
   lastName: string;
 }
 
-let user: userInterface | null = null; // initially
+let user: UserInterface | null = null; // initially
 
 //---------------------------------------------------------
 
@@ -37,6 +37,7 @@ const listOfTag2: PopularTag[] = ["JS", "CSS", "HTML"]; // Better using alias (t
 // Union + Alias COMBINED
 
 type PopularTag2 = string;
-type MigthBePopular = PopularTag2 | null;
+type MightBePopular = PopularTag2 | null;
 
-const dragonsTag: MigthBePopular = "Dragon Stories";
+const dragonsTag: MightBePopular = null; // OK
+const dragonsTag2: MightBePopular = "Dragon Stories"; // OK
