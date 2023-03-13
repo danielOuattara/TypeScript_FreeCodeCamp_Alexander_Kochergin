@@ -29,7 +29,7 @@ class User implements userInterface {
   }
 
   static getInfos() {
-    console.log(`Men in Quatar my have up to ${this.maxWife}`);
+    console.log(`Men in Qatar my have up to ${this.maxWife}`);
   }
 }
 
