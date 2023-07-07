@@ -16,8 +16,8 @@ const user1_A: {
   age: 30,
 };
 
+// age missing !
 const user2_A: {
-  // age missing
   name: string;
   age: number;
 } = {
@@ -37,8 +37,8 @@ const user1_B: User = {
   age: 30,
 };
 
+// age missing !
 const user2_B: User = {
-  // age missing
   name: "John",
 };
 
@@ -55,8 +55,8 @@ const user1_C: User2 = {
   age: 30,
 };
 
+// age is no more missing, it is optional !
 const user2_C: User2 = {
-  // age is no more missing, it is optional
   name: "John",
 };
 

@@ -7,7 +7,7 @@ const hello = "world";
 ---------------------------------*/
 
 let greetings = "bonjour";
-greetings = "foo"; // Correct, let give something changeable
+greetings = "foo"; // Correct, 'let' give something changeable
 greetings = "true"; // Correct
 // greetings = true; // X Incorrect
 

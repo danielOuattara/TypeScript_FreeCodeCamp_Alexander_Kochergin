@@ -30,6 +30,7 @@ class User2 {
   private lastName: string;
   protected birthDate: string;
   readonly nationality: string;
+  static readonly gender: string = "Male";
 
   constructor(
     firstName: string,
@@ -46,13 +47,21 @@ class User2 {
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
   }
+
+  whoIam() {
+    console.log(`${this.getFullName()}, I'am ${this.nationality} citizen.`);
+  }
 }
 
-const user_2 = new User2("John", "Doe", "01 Jan 1900", "chinese");
+const user_2 = new User2("John", "Doe", "01 Jan 1900", "russian");
 
 console.log(user_2.getFullName());
-console.log(user_2.firstName); // X Incorrect , private attribute
-// console.log(user_2.birthDate); // X Incorrect , private attribute
+console.log(user_2.firstName);
+// console.log(user_2.lastName); // X Incorrect , private attribute
 // console.log(user_2.birthDate); // X Incorrect , protected attribute
 
+user_2.whoIam();
+//user_2.nationality = "peruvian"; // X NO : Cannot assign to 'nationality' because it is a read-only property.ts(2540)
+
+console.log(User2.gender); // -> Male
 //------------------------------------------------------------

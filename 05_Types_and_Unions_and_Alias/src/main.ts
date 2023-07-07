@@ -22,15 +22,17 @@ let user: UserInterface | null = null; // initially
 type ID = string;
 type PopularTag = string;
 
-interface userInterface2 {
+interface UserInterface2 {
   id: ID;
   name: string;
   surname: string;
 }
 
 const listOfTag: string[] = ["JS", "CSS", "HTML"]; // Good
+const listOfTag2: Array<string> = ["JS", "CSS", "HTML"]; // Good
 
-const listOfTag2: PopularTag[] = ["JS", "CSS", "HTML"]; // Better using alias (type)
+const listOfTag3: PopularTag[] = ["JS", "CSS", "HTML"]; // Better using alias (type)
+const listOfTag4: Array<PopularTag> = ["JS", "CSS", "HTML"]; // Better using alias (type)
 
 //----------------------------------------------------------
 

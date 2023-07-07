@@ -11,7 +11,7 @@ let pageNumber = page as string;
 Note: 
  - TypeScript has a lot of types for handling DOM out of the box
  - Element in TypeScript is the highest class in hierarchy   
- - HTML Event is also in th highest class in hierarchy
+ - HTML Event is also in the highest class in hierarchy
  */
 
 const someElement = document.querySelector(".foo"); // not specific
@@ -30,7 +30,7 @@ const someElement_2_bis = document.querySelector(".foo") as HTMLAnchorElement;
 console.log(someElement_2_bis.href); // Cool !
 console.log(someElement_2_bis.innerHTML); // Cool !
 
-const someElement_2_ter = document.querySelector(".foo") as HTMLHtmlElement; // if it is an input element, for example
+const someElement_2_ter = document.querySelector(".foo") as HTMLHtmlElement; // if it is a HTML element, for example
 console.log(someElement_2_ter.style); // Cool !
 console.log(someElement_2_ter.onmouseover); // Cool !
 
@@ -65,6 +65,8 @@ const someElement_6 = document.querySelector(".foo") as HTMLInputElement; // if 
 someElement_6.addEventListener("blur", (event) => {
   console.log(event.target.value);
 });
+
+//---
 
 //---
 

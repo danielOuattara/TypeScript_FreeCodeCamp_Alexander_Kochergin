@@ -1,28 +1,21 @@
-// InterFaces + Classes
+export {};
+
+// InterFaces + Classes : Shorter constructor
 
 interface UserInterface {
   getFullName(): string;
 }
 
 class User implements UserInterface {
-  private firstName: string;
-  lastName: string;
-  protected birthDate: string;
-  readonly nationality: string;
   static maxWife: number;
   static readonly minWife: number = 1;
 
   constructor(
-    firstName: string,
-    lastName: string,
-    birthDate: string,
-    nationality: string,
-  ) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.birthDate = birthDate;
-    this.nationality = nationality;
-  }
+    private firstName: string,
+    public lastName: string,
+    protected birthDate: string,
+    readonly nationality: string,
+  ) {}
 
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
@@ -46,20 +39,17 @@ User.getInfos();
 console.log("----------------------------");
 //--------------------------------------------------------------
 
-// Inheritance in TypeScript
+// Inheritance in TypeScript : Shorter constructor
 
 class Admin extends User {
-  private editor: string;
-
   constructor(
     firstName: string,
     lastName: string,
     birthDate: string,
     nationality: string,
-    editor: string,
+    private editor: string,
   ) {
     super(firstName, lastName, birthDate, nationality);
-    this.editor = editor;
   }
 
   getEditor(): string {
@@ -86,19 +76,7 @@ console.log(admin.lastName); // Accessible
 console.log("----------------------------");
 //--------------------------------------------------------------
 
-// Class + InterFace + Inheritance
-
-/* 
-
-  private firstName: string;
-  lastName: string;
-  protected birthDate: string;
-  readonly nationality: string;
-  static maxWife: number;
-  static readonly minWife: number = 1;
-
-
-*/
+// Class + InterFace + Inheritance : Shorter constructor
 
 class SuperAdmin extends User {
   constructor(
