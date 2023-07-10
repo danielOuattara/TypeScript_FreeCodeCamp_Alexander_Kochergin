@@ -1,15 +1,17 @@
+export {};
+
 // generic T datatype
 
-// const addId_00 = (obj) => {
-//   return { ...obj, id: Date.now().toString(16) };
-// };
+const addId_00 = (obj: Object) => {
+  return { ...obj, id: Date.now().toString() };
+};
 
-// const user_00 = {
-//   name: "Jack",
-// };
+const user_00 = {
+  name: "Jack",
+};
 
-// const result_00 = addId_00(user_00); // hover on addId and see
-// console.log("result_00 = ", result_00);
+const result_00 = addId_00(user_00); // hover on addId and see
+console.log("result_00 = ", result_00);
 
 //-----------------------------------------------
 
@@ -30,7 +32,7 @@ console.log("result_0 = ", result0);
 /* use generic
 ------------
 define a generic: <T>
-All generic data type are written inside  <  and > 
+All generic data type are written inside < and > 
 */
 
 const addId = <T>(obj: T) => {
@@ -41,9 +43,12 @@ const user = {
   name: "Jack",
 };
 
-const result = addId(user); // hover on addId and see
+const result_01 = addId(user); // hover on addId and see
+console.log("result_01 = ", result_01);
 
-console.log("result = ", result);
+const list = [1, 2, 3];
+const result_02 = addId(list);
+console.log("result_02 = ", result_02);
 
 //----------------------------------------------------
 
@@ -66,8 +71,8 @@ const result_2_b = addId_2("foo"); //  X Incorrect
 console.log("result_2_b = ", result_2_b);
 //----------------------------------------------------
 
-// now our function expect specifically an object
-// So we are setting the default generic type here
+// We need our function to expect specifically an object
+// So we are setting the default generic type here to be an object
 
 const addId_3 = <T extends object>(obj: T) => {
   return { ...obj, id: Date.now().toString(16) };
@@ -80,14 +85,15 @@ const user_3: UserInterface_3 = {
   name: "Jack",
 };
 
-// const result_3_a = addId_3<UserInterface>("foo"); //  X Incorrect
-const result_3_b = addId_3<UserInterface_3>(user_3); //  Correct
+// const result_3_a = addId_3<"foo">("foo"); //  X Incorrect: Type 'string' does not satisfy the constraint 'object'.ts(2344)
 
+const result_3_b = addId_3<UserInterface_3>(user_3); //  Correct
 console.log(result_3_b);
 
+const result_3_c = addId_3<{ name: string }>(user_3); // OK, naturally
 //------------------------------------------------------
 
-// Generics for  Interfaces:
+// Generics for Interfaces:
 //---------------------------
 
 // generics allow us to provide different datatype to the same structure
